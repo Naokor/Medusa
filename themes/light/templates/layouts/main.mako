@@ -74,7 +74,7 @@
                         <%block name="content" />
                     </div>
                </div><!-- /content -->
-            <%include file="/partials/footer.mako" />
+            <app-footer></app-footer>
         </div>
         <script type="text/javascript" src="js/vender${('.min', '')[app.DEVELOPER]}.js?${sbPID}"></script>
         <script type="text/javascript" src="js/lib/bootstrap-formhelpers.min.js?${sbPID}"></script>
@@ -134,6 +134,7 @@
             Vue.component('app-header', httpVueLoader('js/templates/app-header.vue'));
             // Vue.component('app-link', httpVueLoader('js/templates/app-link.vue'));
         </script>
+        <%include file="/vue-components/app-footer.mako"/>
         <%include file="/vue-components/app-link.mako"/>
         <%include file="/vue-components/asset.mako"/>
         <%include file="/vue-components/file-browser.mako"/>
