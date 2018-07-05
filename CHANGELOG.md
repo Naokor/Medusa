@@ -16,6 +16,7 @@
 - Added a simple "Loading..." message while the page is loading ([#4629](https://github.com/pymedusa/Medusa/pull/4629))
 - Expanded episode status management capabilities, added support for Downloaded, Archived ([#4647](https://github.com/pymedusa/Medusa/pull/4647))
 - Converted the header to Vue ([#4519](https://github.com/pymedusa/Medusa/pull/4519))
+- Converted the footer to Vue ([#4520](https://github.com/pymedusa/Medusa/pull/4520))
 - _Simple message describing the improvement, and a link to the pull request._
 
 **Fixes**
