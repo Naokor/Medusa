@@ -28,8 +28,7 @@ if (!window.router) {
 
     const configRoutes = {
         path: '/config',
-        // @NOTE: This can't be enabled until all child routes are 100% vue
-        // component: { template: '<router-view/>' },
+        component: { template: '<router-view/>' },
         children: [{
             path: '',
             name: 'config',
@@ -99,8 +98,7 @@ if (!window.router) {
 
     const addShowRoutes = {
         path: '/addShows',
-        // @NOTE: This can't be enabled until all child routes are 100% vue
-        // component: { template: '<router-view/>' },
+        component: { template: '<router-view/>' },
         children: [{
             path: '',
             name: 'addShows',
@@ -165,8 +163,7 @@ if (!window.router) {
 
     const manageRoutes = {
         path: '/manage',
-        // @NOTE: This can't be enabled until all child routes are 100% vue
-        // component: { template: '<router-view/>' },
+        component: { template: '<router-view/>' },
         children: [{
             path: '',
             name: 'manage',
@@ -262,9 +259,9 @@ if (!window.router) {
         const { title } = meta;
 
         // If there's no title then it's not a .vue route
-        // or it's handling the it's own title
+        // or it's handling its own title
         if (title) {
-            document.title = `${to.meta.title} | Medusa`;
+            document.title = `${title} | Medusa`;
         }
 
         // Always call next otherwise the <router-view> will be empty
