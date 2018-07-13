@@ -17,7 +17,7 @@ const startVue = () => {
             return {
             };
         },
-        computed: Object.assign(store.mapState([]), {
+        computed: Object.assign(Vuex.mapState([]), {
             period: {
                 get() {
                     return this.config.backlogOverview.period;
