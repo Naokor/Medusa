@@ -1,4 +1,6 @@
 <%!
+    import json
+
     from medusa import app
 %>
 <!DOCTYPE html>
@@ -104,14 +106,11 @@
         <script type="text/javascript" src="js/home/snatch-selection.js?${sbPID}"></script>
         <script type="text/javascript" src="js/home/status.js?${sbPID}"></script>
 
-        <script type="text/javascript" src="js/manage/backlog-overview.js?${sbPID}"></script>
-        <script type="text/javascript" src="js/manage/episode-statuses.js?${sbPID}"></script>
         <script type="text/javascript" src="js/manage/failed-downloads.js?${sbPID}"></script>
         <script type="text/javascript" src="js/manage/index.js?${sbPID}"></script>
         <script type="text/javascript" src="js/manage/init.js?${sbPID}"></script>
         <script type="text/javascript" src="js/manage/subtitle-missed.js?${sbPID}"></script>
         <script type="text/javascript" src="js/manage/subtitle-missed-post-process.js?${sbPID}"></script>
-        <script type="text/javascript" src="js/manage/manage-searches.js?${sbPID}"></script>
 
         <script type="text/javascript" src="js/browser.js?${sbPID}"></script>
 
@@ -181,7 +180,14 @@
                         // Please see https://github.com/egoist/puex/issues/8
                         setTimeout(() => {
                             const { store } = window;
-                            store.dispatch('login');
+                            /* This is used by the `app-header` component
+                               to only show the logout button if a username is set */
+                            % if app.WEB_USERNAME and app.WEB_PASSWORD:
+                            const username = ${json.dumps(app.WEB_USERNAME)};
+                            % else:
+                            const username = '';
+                            % endif
+                            store.dispatch('login', { username });
                             store.dispatch('getConfig')
                                 .then(() => this.$emit('loaded'));
                         }, 1000);
