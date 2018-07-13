@@ -1,5 +1,5 @@
 const VueRouter = window.vueRouter;
-const { routes, httpVueLoader } = window;
+const { httpVueLoader } = window;
 
 if (!window.router) {
     const loginComponent = httpVueLoader('js/templates/login.vue');
