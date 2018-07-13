@@ -35,7 +35,7 @@ const startVue = () => {
                 titleTemplate: '%s | Medusa'
             };
         },
-        computed: Object.assign(store.mapState(['shows']), {
+        computed: Object.assign(Vuex.mapState(['shows']), {
             show() {
                 const id = $('#series-id').val();
                 const indexer = $('#indexer-name').val();
