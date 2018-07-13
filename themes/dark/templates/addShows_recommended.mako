@@ -8,6 +8,7 @@ window.app = {};
 const startVue = () => {
     window.app = new Vue({
         store,
+        router,
         el: '#vue-wrap',
         data() {
             return {
@@ -21,11 +22,7 @@ const startVue = () => {
 <%block name="content">
 <div class="row">
     <div class="col-md-12">
-    % if not header is UNDEFINED:
-        <h1 class="header">${header}</h1>
-    % else:
-        <h1 class="title">${title}</h1>
-    % endif
+        <h1 class="header">{{$route.meta.header}}</h1>
     </div>
 </div>
 

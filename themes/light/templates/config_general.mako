@@ -15,17 +15,14 @@
 <script>
 window.app = new Vue({
     store,
+    router,
     el: '#vue-wrap',
-    metaInfo: {
-        title: 'Config - General'
-    },
     created() {
         // @FIXME: This is a workaround to make sure `rootDirs` is available for the component.
         MEDUSA.config.rootDirs = ${json.dumps(app.ROOT_DIRS)};
     },
     data() {
         return {
-            header: 'General Configuration',
             rootDirs: []
         };
     }
@@ -33,7 +30,7 @@ window.app = new Vue({
 </script>
 </%block>
 <%block name="content">
-<h1 class="header">{{header}}</h1>
+<h1 class="header">{{$route.meta.header}}</h1>
 <% indexer = 0 %>
 % if app.INDEXER_DEFAULT:
     <% indexer = app.INDEXER_DEFAULT %>

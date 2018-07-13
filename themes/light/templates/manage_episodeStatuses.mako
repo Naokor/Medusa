@@ -9,22 +9,15 @@ window.app = {};
 const startVue = () => {
     window.app = new Vue({
         store,
-        el: '#vue-wrap',
-        metaInfo: {
-            title: 'Episode Overview'
-        },
-        data() {
-            return {
-                header: 'Episode Overview'
-            };
-        }
+        router,
+        el: '#vue-wrap'
     });
 };
 </script>
 </%block>
 <%block name="content">
 <div id="content960">
-<h1 class="header">{{header}}</h1>
+<h1 class="header">{{$route.meta.header}}</h1>
 % if not whichStatus or (whichStatus and not ep_counts):
     % if whichStatus:
         <h2>None of your episodes have status ${statusStrings[int(whichStatus)]}</h2>

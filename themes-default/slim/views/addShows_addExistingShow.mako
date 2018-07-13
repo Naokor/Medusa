@@ -15,10 +15,8 @@ window.app = {};
 const startVue = () => {
     window.app = new Vue({
         store,
+        router,
         el: '#vue-wrap',
-        metaInfo: {
-            title: 'Existing Show'
-        },
         data() {
             <% indexers = { str(i): { 'name': v['name'], 'showUrl': v['show_url'] } for i, v in iteritems(indexerConfig) } %>
             return {
@@ -217,7 +215,7 @@ const startVue = () => {
 </script>
 </%block>
 <%block name="content">
-<h1 class="header">Existing Show</h1>
+<h1 class="header">{{$route.meta.header}}</h1>
 <div class="newShowPortal">
     <div id="config-components">
         <ul><li><app-link href="#core-component-group1">Add Existing Show</app-link></li></ul>

@@ -11,22 +11,15 @@ window.app = {};
 const startVue = () => {
     window.app = new Vue({
         store,
-        el: '#vue-wrap',
-        metaInfo: {
-            title: 'Manage Searches'
-        },
-        data() {
-            return {
-                header: 'Manage Searches'
-            };
-        }
+        router,
+        el: '#vue-wrap'
     });
 };
 </script>
 </%block>
 <%block name="content">
 <div id="content800">
-<h1 class="header">{{header}}</h1>
+<h1 class="header">{{$route.meta.header}}</h1>
 <div id="summary2" class="align-left">
 
 <h3>Backlog Search:</h3>

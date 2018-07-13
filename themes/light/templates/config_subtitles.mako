@@ -11,10 +11,8 @@ window.app = {};
 const startVue = () => {
     window.app = new Vue({
         store,
+        router,
         el: '#vue-wrap',
-        metaInfo: {
-            title: 'Config - Subtitles'
-        },
         data() {
             <%
                 subtitle_code_filter = [{'id': code, 'name': subtitles.name_from_code(code)}
@@ -23,7 +21,6 @@ const startVue = () => {
                                     for code in subtitles.wanted_languages()]
             %>
             return {
-                header: 'Subtitles',
                 services: ${json.dumps(subtitles.sorted_service_list())},
                 subtitleCodeFilter: ${json.dumps(subtitle_code_filter)},
                 wantedLanguages: ${json.dumps(wanted_languages)},
@@ -66,7 +63,7 @@ const startVue = () => {
 </script>
 </%block>
 <%block name="content">
-<h1 class="header">{{header}}</h1>
+<h1 class="header">{{$route.meta.header}}</h1>
 <div id="config">
     <div id="config-content">
         <form id="configForm" action="config/subtitles/saveSubtitles" method="post">

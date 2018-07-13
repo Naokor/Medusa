@@ -9,8 +9,18 @@ const startVue = () => {
     window.app = new Vue({
         store,
         el: '#vue-wrap',
-        metaInfo: {
-            title: 'Edit Show'
+        metaInfo() {
+            const { title } = this.series;
+            if (!title) {
+                return {
+                    title: 'Medusa'
+                };
+            }
+
+            return {
+                title,
+                titleTemplate: 'Editing %s | Medusa'
+            };
         },
         data() {
             return {

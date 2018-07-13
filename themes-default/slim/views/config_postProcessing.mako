@@ -17,15 +17,8 @@ window.app = {};
 const startVue = () => {
     window.app = new Vue({
         store,
+        router,
         el: '#vue-wrap',
-        metaInfo: {
-            title: 'Config - Post Processing'
-        },
-        data() {
-            return {
-                header: 'Post Processing'
-            };
-        },
         mounted() {
             $('#config-components').tabs();
             $('#tv_download_dir').fileBrowser({
@@ -554,7 +547,7 @@ const startVue = () => {
 </%block>
 <%block name="content">
 <div id="content960">
-    <h1 class="header">{{header}}</h1>
+    <h1 class="header">{{$route.meta.header}}</h1>
     <div id="config">
         <div id="config-content">
             <form id="configForm" action="config/postProcessing/savePostProcessing" method="post">

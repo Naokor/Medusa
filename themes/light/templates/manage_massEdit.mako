@@ -12,10 +12,8 @@ window.app = {};
 const startVue = () => {
     window.app = new Vue({
         store,
+        router,
         el: '#vue-wrap',
-        metaInfo: {
-            title: 'Mass Edit'
-        },
         mounted() {
             function findDirIndex(which) {
                 const dirParts = which.split('_');

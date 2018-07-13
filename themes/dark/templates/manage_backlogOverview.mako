@@ -11,15 +11,8 @@ window.app = {};
 const startVue = () => {
     window.app = new Vue({
         store,
-        el: '#vue-wrap',
-        metaInfo: {
-            title: 'Backlog Overview'
-        },
-        data() {
-            return {
-                header: 'Backlog Overview'
-            };
-        }
+        router,
+        el: '#vue-wrap'
     });
 };
 </script>
@@ -30,7 +23,7 @@ const startVue = () => {
 <div class="row">
 <div id="content-col" class="col-md-12">
     <div class="col-md-12">
-        <h1 class="header">{{header}}</h1>
+        <h1 class="header">{{$route.meta.header}}</h1>
     </div>
 </div>
 

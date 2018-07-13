@@ -21,9 +21,30 @@ const startVue = () => {
     window.app = new Vue({
         el: '#vue-wrap',
         store,
-        data() {
-            return {};
+        router,
+        metaInfo() {
+            if (!this.show || !this.show.title) {
+                return {
+                    title: 'Medusa'
+                };
+            }
+
+            const { title } = this.show;
+            return {
+                title,
+                titleTemplate: '%s | Medusa'
+            };
         },
+        computed: Object.assign(store.mapState(['shows']), {
+            show() {
+                const id = $('#series-id').val();
+                const indexer = $('#indexer-name').val();
+                const { shows } = this;
+                if (shows) {
+                    return shows.find(show => show.indexer === indexer && show.id[indexer] === Number(id));
+                }
+            }
+        }),
         created() {
             const { $store } = this;
             $store.dispatch('getShows'); // Used by show-selector component

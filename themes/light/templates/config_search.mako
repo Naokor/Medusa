@@ -14,13 +14,10 @@ window.app = {};
 const startVue = () => {
     window.app = new Vue({
         store,
+        router,
         el: '#vue-wrap',
-        metaInfo: {
-            title: 'Config - Episode Search'
-        },
         data() {
             return {
-                header: 'Search Settings',
                 clients: {
                     torrent: {
                         blackhole: {
@@ -287,7 +284,7 @@ const startVue = () => {
 </script>
 </%block>
 <%block name="content">
-<h1 class="header">{{header}}</h1>
+<h1 class="header">{{$route.meta.header}}</h1>
 <div id="config">
     <div id="config-content">
         <form id="configForm" action="config/search/saveSearch" method="post">
