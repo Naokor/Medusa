@@ -13,20 +13,23 @@
 %>
 <%block name="scripts">
 <script>
-window.app = new Vue({
-    store,
-    router,
-    el: '#vue-wrap',
-    created() {
-        // @FIXME: This is a workaround to make sure `rootDirs` is available for the component.
-        MEDUSA.config.rootDirs = ${json.dumps(app.ROOT_DIRS)};
-    },
-    data() {
-        return {
-            rootDirs: []
-        };
-    }
-});
+window.app = {};
+const startVue = () => {
+    window.app = new Vue({
+        store,
+        router,
+        el: '#vue-wrap',
+        created() {
+            // @FIXME: This is a workaround to make sure `rootDirs` is available for the component.
+            MEDUSA.config.rootDirs = ${json.dumps(app.ROOT_DIRS)};
+        },
+        data() {
+            return {
+                rootDirs: []
+            };
+        }
+    });
+};
 </script>
 </%block>
 <%block name="content">
