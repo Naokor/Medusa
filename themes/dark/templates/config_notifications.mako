@@ -10,13 +10,11 @@
 <%block name="scripts">
 <script>
 window.app = {};
-const startVue = () => {
-    window.app = new Vue({
-        store,
-        router,
-        el: '#vue-wrap'
-    });
-};
+window.app = new Vue({
+    store,
+    router,
+    el: '#vue-wrap'
+});
 </script>
 </%block>
 <%block name="content">
