@@ -203,8 +203,8 @@
                 Vue.config.performance = true;
             }
         </script>
-        <%block name="scripts" />
         <script src="js/router.js"></script>
+        <%block name="scripts" />
         <script>
             if (!window.app) {
                 console.info('Loading Vue with router since window.app is missing.');
