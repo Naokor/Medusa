@@ -1,9 +1,22 @@
-## 0.2.7 (unreleased)
+## 0.2.8 (unreleased)
+
+**New Features**
+
+- _Simple message describing the new feature, and a link to the pull request._
+
+**Improvements**
+
+- _Simple message describing the improvement, and a link to the pull request._
+
+**Fixes**
+
+- _Simple message describing the fix, and a link to the pull request._
+
+## 0.2.7 (2018-07-23)
 
 **New Features**
 
 - Hot-swap themes: No need to restart the Medusa after changing the theme ([#4271](https://github.com/pymedusa/Medusa/pull/4271))
-- _Simple message describing the new feature, and a link to the pull request._
 
 **Improvements**
 
@@ -17,7 +30,8 @@
 - Expanded episode status management capabilities, added support for Downloaded, Archived ([#4647](https://github.com/pymedusa/Medusa/pull/4647))
 - Added ability to manually change episode quality ([#4658](https://github.com/pymedusa/Medusa/pull/4658))
 - Converted the header to Vue ([#4519](https://github.com/pymedusa/Medusa/pull/4519))
-- _Simple message describing the improvement, and a link to the pull request._
+- Add Viaplay network logo ([#4691](https://github.com/pymedusa/Medusa/pull/4691))
+- Convert Vue components to SFC - Single-File Components ([#4696](https://github.com/pymedusa/Medusa/pull/4696))
 
 **Fixes**
 
@@ -29,6 +43,5 @@
 - Fixed unhandled request error on Add Existing Show ([#4639](https://github.com/pymedusa/Medusa/pull/4639))
 - Fixed Telegram & Growl message encoding ([#4657](https://github.com/pymedusa/Medusa/pull/4657))
 - Fixed being unable to change scene numbering for first 2 episodes of each season on displayShow ([#4656](https://github.com/pymedusa/Medusa/pull/4656))
-- _Simple message describing the fix, and a link to the pull request._
 
 ### [**Previous versions**](https://github.com/pymedusa/medusa.github.io/blob/master/news/CHANGES.md)
