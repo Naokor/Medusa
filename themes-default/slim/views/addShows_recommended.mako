@@ -5,18 +5,16 @@
 % endif
 <script>
 window.app = {};
-const startVue = () => {
-    window.app = new Vue({
-        store,
-        router,
-        el: '#vue-wrap',
-        data() {
-            return {
-                rootDirs: []
-            };
-        }
-    });
-};
+window.app = new Vue({
+    store,
+    router,
+    el: '#vue-wrap',
+    data() {
+        return {
+            rootDirs: []
+        };
+    }
+});
 </script>
 </%block>
 <%block name="content">
