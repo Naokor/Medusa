@@ -12,6 +12,8 @@
 
 - _Simple message describing the fix, and a link to the pull request._
 
+-----
+
 ## 0.2.7 (2018-07-23)
 
 **New Features**
@@ -44,4 +46,6 @@
 - Fixed Telegram & Growl message encoding ([#4657](https://github.com/pymedusa/Medusa/pull/4657))
 - Fixed being unable to change scene numbering for first 2 episodes of each season on displayShow ([#4656](https://github.com/pymedusa/Medusa/pull/4656))
 
-### [**Previous versions**](https://github.com/pymedusa/medusa.github.io/blob/master/news/CHANGES.md)
+-----
+
+### [**Previous versions**](https://github.com/pymedusa/medusa.github.io/blob/master/news/CHANGES.md#v026)
